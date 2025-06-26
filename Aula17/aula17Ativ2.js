@@ -1,18 +1,28 @@
 
 
-function soma(a, b) {
+function parOuImpar(num) {
     return new Promise((resolve, reject) => {
-        setTimeout(() => {
-            resolve(a + b);
-        }, 2000);
+        if (num % 2 === 0) {
+            resolve('Par');
+        } else {
+            reject('Impar');
+        }
     })
-};
+}
 
-soma(1, 2)
-    .then((result) => {
-        console.log(result);
-    })
-    .catch((error) => {
-        console.log(error);
-    });
+function testar(){
+    const num = 8;
+    parOuImpar(num)
+    .then((result) => console.log(result))
+    .catch((error) => console.log(error))
+    .finally(() => console.log('número de parâmetro foi: ' + num));
+}
 
+
+
+parOuImpar(10)
+    .then((result) => console.log(result))
+    .catch((error) => console.log(error))
+    .finally(() => console.log('número de parâmetro foi: ' + num));
+
+    
