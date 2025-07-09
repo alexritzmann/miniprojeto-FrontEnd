@@ -1,1 +1,1 @@
-# repo-semana06
+# Miniprojeto do curso de FuturoDEV (frontend)
