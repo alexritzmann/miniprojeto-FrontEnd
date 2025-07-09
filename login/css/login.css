@@ -1,0 +1,125 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+body{ 
+    font-family: 'Poppins', sans-serif; 
+    height: 100%;
+    background-image: url("/coleta-consciente/img/rodape.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(38, 52, 44, 0.6);
+  backdrop-filter: blur(2px);
+  z-index: -1;
+}
+
+
+form { 
+    max-width: 320px; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+h2{
+    color: #ebe0e0;
+    text-align: center;
+    font-size: 27px;
+}
+
+input{ 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%; 
+    padding: 10px; 
+    margin-top: 15px; 
+    border-radius: 8px;
+    background-color: #abc6cb;
+    font-family: 'Poppins', sans-serif;
+    color: #383f25;
+    font-weight: 600;
+    font-size: 17px;
+    border: none;
+}
+input::placeholder{
+    font-weight: bold;
+    font-size: 17px;
+    color: #364f64;
+    border: none;
+}
+
+input:focus {
+    outline: none; 
+    border: 2px solid #104c3d; 
+    box-shadow: 0 0 5px rgba(37, 97, 77, 0.5); 
+    background-color: rgba(255, 255, 255, 0.8); 
+}
+
+.btnEntrar:disabled { 
+    font-family: 'Poppins', sans-serif;
+    background: #a0a0a0; 
+    cursor: not-allowed; 
+    color:rgb(62, 55, 55);
+    font-weight: bold;
+    font-size: 20px;
+    border: none;
+}
+
+.btnEntrar{
+    width: 50%; 
+    padding: 10px; 
+    margin-top: 10px; 
+    border-radius: 8px;
+    border: none;
+    text-align: center;
+    background-color:#d0bbbb; 
+    color:rgb(61, 77, 77);
+    font-weight: bold;
+    font-size: 20px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.btnEntrar:hover:enabled{
+    border: none;
+    background:#638189;
+    color: #f6eaea;
+    transition: 0.3s ease;
+}
+
+.bordafosca{
+    background-color: rgba(227, 222, 222, 0.1);
+    backdrop-filter: blur(7px);
+    border: 1px solid rgba(255, 255, 255, 0);
+    border-radius: 12px; 
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+    padding: 100px;
+    padding-top: 190px;
+    padding-bottom: 190px;
+}
+

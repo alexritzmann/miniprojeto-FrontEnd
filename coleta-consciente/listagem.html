@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="/coleta-consciente/css/listagem.css">
+  <script src="/coleta-consciente/js/listagem.js" defer></script>
+
+  <title>Listagem de Parceiros - Administrativo</title>
+</head>
+<body>
+
+<header>
+  <h1>Parceiros Cadastrados</h1>
+  <div>
+    Usuário: <span id="emailUsuario"></span>
+    <button id="logoutBtn">Sair</button>
+  </div>
+</header>
+
+  <main>
+    <div id="loading" class="loading">Carregando parceiros...</div>
+    <table id="parceirosTable" style="display:none;">
+      <thead>
+        <tr>
+          <th>Nome</th>
+          <th>Tipo</th>
+          <th>Responsável</th>
+          <th>Telefone</th>
+          <th>Email</th>
+          <th>Endereço</th>
+          <th>Resíduos Aceitos</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </main>
+
+
+</body>
+</html>
