@@ -38,7 +38,7 @@ body::before {
 
 
 form { 
-    max-width: 320px; 
+    max-width: 520px; 
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -49,16 +49,16 @@ form {
 h2{
     color: #ebe0e0;
     text-align: center;
-    font-size: 27px;
+    font-size: 35px;
 }
 
 input{ 
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 100%; 
+    width: 120%; 
     padding: 10px; 
-    margin-top: 15px; 
+    margin-top: 20px; 
     border-radius: 8px;
     background-color: #abc6cb;
     font-family: 'Poppins', sans-serif;
@@ -94,7 +94,7 @@ input:focus {
 .btnEntrar{
     width: 50%; 
     padding: 10px; 
-    margin-top: 10px; 
+    margin-top: 20px; 
     border-radius: 8px;
     border: none;
     text-align: center;
@@ -105,7 +105,7 @@ input:focus {
     font-family: 'Poppins', sans-serif;
 }
 
-.btnEntrar:hover:enabled{
+.btnEntrar:hover:enabled {
     border: none;
     background:#638189;
     color: #f6eaea;
@@ -119,7 +119,7 @@ input:focus {
     border-radius: 12px; 
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
     padding: 100px;
-    padding-top: 190px;
-    padding-bottom: 190px;
+    padding-top: 170px;
+    padding-bottom: 170px;
 }
 
