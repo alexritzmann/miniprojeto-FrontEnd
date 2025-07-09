@@ -18,5 +18,5 @@ document.getElementById('loginForm').addEventListener('submit', e =>
 {
     e.preventDefault();
     localStorage.setItem('emailUsuario', emailInput.value.trim());
-    window.location.href = 'listagem.html';
+    window.location.href = '/coleta-consciente/listagem.html';
 });

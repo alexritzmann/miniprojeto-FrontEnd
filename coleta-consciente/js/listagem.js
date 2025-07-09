@@ -6,7 +6,7 @@ const emailUsuario = localStorage.getItem('emailUsuario');
 if (!emailUsuario) 
 {
     alert('Usuário não autenticado. Redirecionando para login.');
-    window.location.href = 'login.html';
+    window.location.href = '/coleta-consciente/login.html';
 } else {
     document.getElementById('emailUsuario').textContent = emailUsuario;
 }
@@ -15,7 +15,7 @@ if (!emailUsuario)
 document.getElementById('logoutBtn').addEventListener('click', () => 
 {
     localStorage.removeItem('emailUsuario');
-    window.location.href = 'login.html';
+    window.location.href = '/coleta-consciente/login.html';
 });
 
 

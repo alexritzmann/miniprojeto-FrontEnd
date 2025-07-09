@@ -3,7 +3,7 @@
 if (!localStorage.getItem('emailUsuario')) 
 {
     alert('Usuário não autenticado. Faça login.');
-    window.location.href = 'login.html';
+    window.location.href = '/coleta-consciente/login.html';
 }
 
 
@@ -12,7 +12,7 @@ document.getElementById('logoutLink').addEventListener('click', e =>
 {
     e.preventDefault();
     localStorage.removeItem('emailUsuario');
-    window.location.href = 'login.html';
+    window.location.href = '/coleta-consciente/login.html';
 });
 
 
