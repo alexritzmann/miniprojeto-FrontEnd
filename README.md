@@ -1,5 +1,3 @@
-# Miniprojeto do curso de FuturoDEV (frontend)
-
 # Coleta Consciente 🌱
 
 ### Participantes do Grupo de Trabalho:
@@ -43,3 +41,88 @@ O projeto está alinhado com os **Objetivos de Desenvolvimento Sustentável (ODS
 
 ## 📁 Estrutura de Diretórios
 
+```
+/coleta-consciente
+│
+├── landingpage-v5/
+│   ├── style/
+│   │   └── ODS5.css
+│   └── js/
+│       └── landingpage.js
+│
+├── listagem/
+│   ├── listagem.html
+│   ├── css/
+│   │   └── listagem.css
+│   └── js/
+│       └── listagem.js
+│
+├── detalhesParceiros/
+│   ├── detalhe.html
+│   ├── css/
+│   │   └── detalhe.css
+│   └── js/
+│       └── detalhe.js
+│
+├── login/
+│   ├── login.html
+│   ├── css/
+│   │   └── login.css
+│   └── js/
+│       └── login.js
+│
+├── img/
+│   └── (Imagens usadas nas páginas)
+├── video/
+│   └── floresta1.mp4
+│
+├── index.html
+```
+
+---
+
+## 🚀 Como Executar o Projeto Localmente
+
+1. Clone o repositório:
+```bash
+git clone https://github.com/SEU-USUARIO/coleta-consciente.git
+```
+
+2. Abra o arquivo `index.html` localizado em `landingpage-v5/` no seu navegador.
+
+> Não há dependências externas a serem instaladas. Todos os arquivos estão prontos para uso em ambiente local.
+
+---
+
+## 📡 API Utilizada
+
+Utilizamos a [MockAPI](https://mockapi.io/) para simular o backend de parceiros cadastrados:
+```
+https://6860899b8e74864084437167.mockapi.io/jmt-futurodev/api/parceiros
+```
+
+---
+
+## 👥 Público-Alvo
+
+- Cidadãos de Joinville
+- Organizações de coleta e reciclagem
+- Instituições públicas ou privadas com foco ambiental
+
+---
+
+## 📷 Prints e Demonstrações
+
+(Imagens podem ser adicionadas aqui para ilustrar o funcionamento da plataforma)
+
+---
+
+## 🧾 Licença
+
+Este projeto é de livre uso educacional e não possui fins lucrativos.
+
+---
+
+## 💬 Contato
+
+Caso tenha interesse em contribuir, entre em contato com um dos integrantes do grupo!
