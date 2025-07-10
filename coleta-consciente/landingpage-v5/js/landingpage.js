@@ -137,20 +137,3 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
-$(document).ready(function() 
-{
-    $('#tipoParceiro').select2({
-        minimumResultsForSearch: Infinity, // Remove a busca
-        templateResult: formatOption,
-        templateSelection: formatOption,
-        dropdownCssClass: 'custom-select2-dropdown', // Classe personalizada
-        containerCssClass: 'custom-select2-container' // Classe personalizada
-    });
-
-    function formatOption(option) {
-        if (!option.id) return option.text;
-        var $icon = $('<i>').addClass($(option.element).data('icon') + ' me-2');
-        var $text = $('<span>').text(option.text);
-        return $([$icon[0], $text[0]]);
-    }
-});
