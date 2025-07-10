@@ -98,7 +98,7 @@ input:focus {
     border-radius: 8px;
     border: none;
     text-align: center;
-    background-color:#d0bbbb; 
+    background-color:#a3d09b;
     color:rgb(61, 77, 77);
     font-weight: bold;
     font-size: 20px;
@@ -107,9 +107,11 @@ input:focus {
 
 .btnEntrar:hover:enabled {
     border: none;
-    background:#638189;
-    color: #f6eaea;
-    transition: 0.3s ease;
+    background:#6caf83;
+    transition: 0.1s ease;
+    cursor: pointer;
+    color: #145214;
+    box-shadow: 0 0 8px #a3d09b;
 }
 
 .bordafosca{
