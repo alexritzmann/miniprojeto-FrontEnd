@@ -111,12 +111,6 @@ https://6860899b8e74864084437167.mockapi.io/jmt-futurodev/api/parceiros
 
 ---
 
-## 📷 Prints e Demonstrações
-
-(Imagens podem ser adicionadas aqui para ilustrar o funcionamento da plataforma)
-
----
-
 ## 🧾 Licença
 
 Este projeto é de livre uso educacional e não possui fins lucrativos.
