@@ -24,7 +24,11 @@ function formatarResiduos(residuos) {
 }
 
 function tratar(valor) {
-  return valor === undefined || valor === null || valor === '' ? 'indefinido' : valor;
+  return valor === undefined || valor === null || valor === '' ? 'Indefinido' : valor;
+}
+
+function formatarData(dataISO) {
+  return dataISO ? new Date(dataISO).toLocaleDateString('pt-BR') : 'Indefinido';
 }
 
 function getIconClass(tipo) {
@@ -39,20 +43,31 @@ function getIconClass(tipo) {
 fetch(`https://6860899b8e74864084437167.mockapi.io/jmt-futurodev/api/parceiros/${parceiroId}`)
   .then(resp => resp.json())
   .then(p => {
-  container.innerHTML = `
-    <div class="icon-container">
-      <i class="fas ${getIconClass(p.tipoParceiro)}"></i>
-    </div>
-    <h2>${tratar(p.nomeParceiro)}</h2>
-    <p><strong>Tipo:</strong> ${tratar(tipoTexto(p.tipoParceiro))}</p>
-    <p><strong>Data de Cadastro:</strong> ${p.createdAt ? new Date(p.createdAt).toLocaleDateString('pt-BR') : 'indefinido'}</p>
-    <p><strong>Responsável:</strong> ${tratar(p.responsavelParceiro)}</p>
-    <p><strong>Telefone:</strong> ${tratar(p.telResponsavel)}</p>
-    <p><strong>Email:</strong> ${tratar(p.emailResponsavel)}</p>
-    <p><strong>Endereço:</strong> Rua ${tratar(p.rua)}, Nº ${tratar(p.numero)}, Bairro ${tratar(p.bairro)}</p>
-    <p><strong>Resíduos Aceitos:</strong> ${formatarResiduos(p)}</p>
-  `;
-})
+    container.innerHTML = `
+      <div class="icon-container">
+        <i class="fas ${getIconClass(p.tipoParceiro)}"></i>
+      </div>
+      <h2>${tratar(p.nomeParceiro)}</h2>
+      <p><strong>Tipo:</strong> ${tratar(tipoTexto(p.tipoParceiro))}</p>
+      <p><strong>Data de Cadastro:</strong> ${formatarData(p.createdAt)}</p>
+      <p><strong>Responsável:</strong> ${tratar(p.responsavelParceiro)}</p>
+      <p><strong>Telefone:</strong> ${tratar(p.telResponsavel)}</p>
+      <p><strong>Email:</strong> ${tratar(p.emailResponsavel)}</p>
+      <p><strong>Endereço:</strong> Rua ${tratar(p.rua)}, Nº ${tratar(p.numero)}, Bairro ${tratar(p.bairro)}</p>
+      <p><strong>Resíduos Aceitos:</strong> ${formatarResiduos(p)}</p>
+    `;
+
+    // Folhas subindo com efeito visual
+    for (let i = 0; i < 18; i++) {  // mais folhas (18)
+      const folha = document.createElement('i');
+      folha.className = 'fas fa-leaf folha-subindo';
+      folha.style.left = `${Math.random() * 100}%`;
+      folha.style.animationDelay = `${Math.random() * 10}s`;
+      folha.style.fontSize = `${Math.random() * 18 + 22}px`; // tamanhos maiores (22px a 40px)
+      container.appendChild(folha);
+    }
+
+  })
   .catch(() => {
     container.innerHTML = '<p>Erro ao carregar os dados do parceiro. Tente novamente.</p>';
   });

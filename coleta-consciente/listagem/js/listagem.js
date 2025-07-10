@@ -1,94 +1,74 @@
-const emailUsuario = localStorage.getItem('emailUsuario');
+const apiUrl = 'https://6860899b8e74864084437167.mockapi.io/jmt-futurodev/api/parceiros';
+const cardsContainer = document.getElementById('cardsContainer');
+const searchBtn = document.getElementById('searchBtn');
+const searchInput = document.getElementById('searchInput');
 
-if (!emailUsuario) {
-  alert('Usuário não autenticado. Redirecionando para login.');
-  window.location.href = '/coleta-consciente/login/login.html';
-} else {
-  document.getElementById('emailUsuario').textContent = emailUsuario;
-}
-
-document.getElementById('logoutBtn').addEventListener('click', () => {
-  localStorage.removeItem('emailUsuario');
-  window.location.href = '/coleta-consciente/login/login.html';
-});
-
-function tipoParceiroTexto(tipo) {
-  const tipos = {
-    ECO: 'Ecoponto',
-    COO: 'Cooperativa',
-    PEV: 'Ponto de Entrega Voluntária'
+function getIcon(tipo) {
+  const icons = {
+    ECO: 'fa-leaf',
+    COO: 'fa-recycle',
+    PEV: 'fa-box-open'
   };
-  return tipos[tipo] || tipo;
+  return icons[tipo] || 'fa-map-marker-alt';
 }
 
-function residuosAceitos(obj) {
-  const nomes = {
-    papel: 'Papel', plastico: 'Plástico', vidro: 'Vidro', metal: 'Metal',
-    oleoCozinha: 'Óleo de cozinha', pilhaBateria: 'Pilhas e baterias',
-    eletronico: 'Eletrônicos', roupa: 'Roupas', outros: 'Outros'
-  };
-  return Object.keys(nomes).filter(key => obj[key]).map(key => nomes[key]).join(', ') || 'Nenhum informado';
+function formatDate(dateString) {
+  const date = new Date(dateString);
+  return date.toLocaleDateString('pt-BR');
 }
 
-let parceiros = [];
+function renderCards(parceiros) {
+  cardsContainer.innerHTML = '';
 
-function renderizarTabela(lista) {
-  const tbody = document.querySelector('#parceirosTable tbody');
-  tbody.innerHTML = '';
+  if (parceiros.length === 0) {
+    cardsContainer.innerHTML = '<p>Nenhum parceiro encontrado.</p>';
+    return;
+  }
 
-  lista.forEach(p => {
-    const tr = document.createElement('tr');
-    tr.style.cursor = 'pointer';
-    tr.addEventListener('click', () => {
+  parceiros.forEach(p => {
+    const card = document.createElement('div');
+    card.className = 'card';
+    card.innerHTML = `
+      <div class="icon"><i class="fas ${getIcon(p.tipoParceiro)}"></i></div>
+      <h3>${p.nomeParceiro}</h3>
+      <p><strong>Bairro:</strong> ${p.bairro}</p>
+      <p><strong>Data:</strong> ${p.createdAt ? formatDate(p.createdAt) : 'Não informada'}</p>
+    `;
+
+    card.addEventListener('click', () => {
       window.location.href = `/coleta-consciente/detalhesParceiros/detalhe.html?id=${p.id}`;
     });
 
-    tr.innerHTML = `
-      <td>${p.nomeParceiro}</td>
-      <td>${tipoParceiroTexto(p.tipoParceiro)}</td>
-      <td>${p.responsavelParceiro}</td>
-      <td>${p.telResponsavel}</td>
-      <td>${p.emailResponsavel}</td>
-      <td>${p.rua}, ${p.numero} - ${p.bairro}</td>
-      <td>${residuosAceitos(p)}</td>
-    `;
-    tbody.appendChild(tr);
+    cardsContainer.appendChild(card);
   });
-
-  document.getElementById('loading').style.display = 'none';
-  document.getElementById('parceirosTable').style.display = 'table';
 }
 
-function filtrarParceiros(termo) {
-  const termoLower = termo.toLowerCase().trim();
-  if (termoLower === '') {
-    renderizarTabela(parceiros);
-  } else {
-    const filtrados = parceiros.filter(p =>
-      p.nomeParceiro.toLowerCase().includes(termoLower) ||
-      p.bairro.toLowerCase().includes(termoLower)
-    );
-    renderizarTabela(filtrados);
+async function carregarParceiros() {
+  try {
+    const res = await fetch(apiUrl);
+    const parceiros = await res.json();
+    renderCards(parceiros);
+  } catch (err) {
+    console.error('Erro ao carregar parceiros:', err);
+    cardsContainer.innerHTML = '<p>Erro ao carregar dados.</p>';
   }
 }
 
-fetch('https://6860899b8e74864084437167.mockapi.io/jmt-futurodev/api/parceiros')
-  .then(resp => resp.json())
-  .then(data => {
-    parceiros = data;
-    renderizarTabela(parceiros);
-  })
-  .catch(() => {
-    document.getElementById('loading').textContent = 'Erro ao carregar parceiros. Tente recarregar a página.';
-  });
+searchBtn.addEventListener('click', async () => {
+  const termo = searchInput.value.trim().toLowerCase();
+  if (!termo) return carregarParceiros();
 
-// 🔍 Filtragem ao digitar
-document.getElementById('searchInput').addEventListener('input', (event) => {
-  filtrarParceiros(event.target.value);
+  try {
+    const res = await fetch(apiUrl);
+    const parceiros = await res.json();
+    const filtrados = parceiros.filter(p =>
+      p.nomeParceiro.toLowerCase().includes(termo) ||
+      p.bairro.toLowerCase().includes(termo)
+    );
+    renderCards(filtrados);
+  } catch (err) {
+    console.error('Erro na pesquisa:', err);
+  }
 });
 
-// 🔘 Filtragem ao clicar no botão
-document.getElementById('searchBtn').addEventListener('click', () => {
-  const termo = document.getElementById('searchInput').value;
-  filtrarParceiros(termo);
-});
+window.addEventListener('DOMContentLoaded', carregarParceiros);

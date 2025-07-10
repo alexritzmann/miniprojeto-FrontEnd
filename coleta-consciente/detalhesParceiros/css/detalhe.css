@@ -1,3 +1,13 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+:root {
+  --verde-folha: #6ee7b7;
+  --verde-profundo: #064e3b;
+  --verde-claro: #a7f3d0;
+  --azul-agua: #5eead4;
+  --branco: #f0fdfc;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -6,128 +16,320 @@
 
 body {
   font-family: 'Poppins', sans-serif;
-  background: url('/coleta-consciente/img/texturaMaddeira.jpg') no-repeat center center fixed;
-  background-size: cover;
-  color: #1e392a;
-  padding: 40px 20px;
+  background:
+    linear-gradient(135deg, rgba(23, 53, 36, 0.651), rgba(25, 68, 68, 0.289)),
+    url('/coleta-consciente/img/plantamolhada.jpg') no-repeat center / cover fixed;
+  color: var(--branco);
+  min-height: 100vh;
+  overflow-x: hidden;
+  position: relative;
 }
 
+/* Partículas verdes (folhas flutuando) */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    radial-gradient(circle at 20% 30%, rgba(110, 231, 183, 0.134) 0%, transparent 20%),
+    radial-gradient(circle at 80% 70%, rgba(94, 234, 213, 0.138) 0%, transparent 20%);
+  pointer-events: none;
+  z-index: -1;
+  animation: folhaFlutua 25s infinite alternate ease-in-out;
+}
+
+@keyframes folhaFlutua {
+  0% { transform: translateY(0) rotate(0deg); opacity: 0.8; }
+  50% { opacity: 1; }
+  100% { transform: translateY(-30px) rotate(5deg); opacity: 0.8; }
+}
+
+/* Ícones decorativos */
+.decorativo {
+  position: absolute;
+  width: 40px;
+  opacity: 0.4;
+  animation: flutuar 12s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.decorativo.folha {
+  top: 10%;
+  left: 5%;
+  animation-delay: 0s;
+}
+
+.decorativo.gota {
+  bottom: 15%;
+  right: 8%;
+  animation-delay: 3s;
+}
+
+.decorativo.reciclagem {
+  top: 20%;
+  right: 15%;
+  animation-delay: 6s;
+}
+
+@keyframes flutuar {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+}
+
+/* Header */
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: rgba(34, 66, 50, 0.95);
-  padding: 20px 30px;
-  border-radius: 16px;
-  color: #ecfdf5;
-  margin-bottom: 40px;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  background: rgba(10, 30, 20, 0.7);
+  color: var(--branco);
+  padding: 20px 40px;
+  border-radius: 0 0 24px 24px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  margin-bottom: 50px;
+  backdrop-filter: blur(8px);
+  border-bottom: 2px solid rgba(110, 231, 183, 0.3);
+  transition: all 0.4s ease;
 }
 
-.voltar-btn {
-  background-color: #4caf50;
-  color: #fff;
-  padding: 10px 18px;
-  border: none;
-  border-radius: 8px;
-  text-decoration: none;
+header:hover {
+  background: rgba(10, 30, 20, 0.8);
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.2);
+}
+
+header h1 {
+  font-size: 24px;
   font-weight: 600;
-  font-size: 16px;
-  transition: background 0.3s ease;
+  letter-spacing: 0.8px;
+  position: relative;
+}
+
+header h1::after {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 40px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--verde-folha), transparent);
+  transition: width 0.4s ease;
+}
+
+header:hover h1::after {
+  width: 80px;
+}
+
+/* Botão */
+.voltar-btn {
+  background-color: transparent;
+  color: var(--branco);
+  padding: 12px 24px;
+  border: 1px solid rgba(110, 231, 183, 0.5);
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 15px;
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.voltar-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(110, 231, 183, 0.15), transparent);
+  transition: 0.6s;
 }
 
 .voltar-btn:hover {
-  background-color: #66bb6a;
+  background-color: rgba(110, 231, 183, 0.1);
+  box-shadow: 0 4px 15px rgba(110, 231, 183, 0.2);
+  transform: translateY(-2px);
 }
 
+.voltar-btn:hover::before {
+  left: 100%;
+}
+
+/* Card ecológico */
 .container {
-  background: rgba(255, 255, 255, 0.97);
+  background: rgba(10, 30, 20, 0.5);
   border-radius: 24px;
-  padding: 40px 30px;
-  max-width: 860px;
+  padding: 40px;
+  max-width: 900px;
   margin: auto;
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
   text-align: center;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(110, 231, 183, 0.2);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s ease;
 }
 
-.avatar {
-  width: 100px;
-  height: 100px;
-  object-fit: contain;
-  margin-bottom: 20px;
+.container::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(110, 231, 183, 0.04) 0%, transparent 70%);
+  animation: brilhoOrvalho 15s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes brilhoOrvalho {
+  0% { transform: scale(0.8) rotate(0deg); opacity: 0.5; }
+  50% { opacity: 0.8; }
+  100% { transform: scale(1.2) rotate(5deg); opacity: 0.5; }
+}
+
+.container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.25);
 }
 
 h2 {
-  font-size: 28px;
-  margin-bottom: 20px;
-  color: #17452d;
+  font-size: 32px;
+  margin-bottom: 25px;
+  color: var(--branco);
+  position: relative;
+  display: inline-block;
 }
 
-.info {
-  text-align: left;
-  margin-top: 30px;
+h2::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--verde-folha), transparent);
+  transition: width 0.4s ease;
+}
+
+.container:hover h2::after {
+  width: 120px;
 }
 
 p {
-  font-size: 17px;
-  margin-bottom: 14px;
-  color: #2e3c2f;
-  line-height: 1.6;
+  font-size: 18px;
+  margin-bottom: 20px;
+  color: var(--branco);
+  line-height: 1.7;
 }
 
 strong {
   font-weight: 600;
-  color: #0e2d1b;
+  color: var(--verde-folha);
 }
 
-hr {
-  border: none;
-  height: 1px;
-  background-color: #d9e4dd;
-  margin: 24px 0;
-}
-
+/* Avatar icônico com tema ecológico */
 .icon-container {
-  display: inline-block;
-  width: 100px;
-  height: 100px;
-  margin: 0 auto 25px;
-  background-color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 140px;
+  height: 140px;
+  margin: 0 auto 30px;
+  background-color: rgba(255, 255, 255, 0.05);
   border-radius: 50%;
-  box-shadow: 0 4px 12px rgba(30, 57, 42, 0.15);
-  position: relative;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.icon-container i {
-  font-size: 48px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.icon-container .fa-leaf {
-  color: #2ecc71;
-  text-shadow: 0 2px 4px rgba(46, 204, 113, 0.3);
-}
-
-.icon-container .fa-recycle {
-  color: #3498db;
-  text-shadow: 0 2px 4px rgba(52, 152, 219, 0.3);
-}
-
-.icon-container .fa-box-open {
-  color: #e67e22;
-  text-shadow: 0 2px 4px rgba(230, 126, 34, 0.3);
-}
-
-.icon-container .fa-map-marker-alt {
-  color: #7f8c8d;
-  text-shadow: 0 2px 4px rgba(127, 140, 141, 0.3);
+  box-shadow:
+    0 8px 25px rgba(0, 0, 0, 0.15),
+    inset 0 0 10px rgba(110, 231, 183, 0.2);
+  backdrop-filter: blur(6px);
+  transition: all 0.5s ease;
+  border: 1px solid rgba(110, 231, 183, 0.3);
 }
 
 .icon-container:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(30, 57, 42, 0.2);
+  transform: scale(1.05) translateY(-5px);
+  box-shadow:
+    0 12px 30px rgba(0, 0, 0, 0.2),
+    inset 0 0 15px rgba(110, 231, 183, 0.3);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(110, 231, 183, 0.4); }
+  70% { box-shadow: 0 0 0 10px rgba(110, 231, 183, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(110, 231, 183, 0); }
+}
+
+.icon-container i {
+  font-size: 60px;
+  color: var(--verde-folha);
+  transition: transform 0.4s ease;
+}
+
+.icon-container:hover i {
+  transform: scale(1.1);
+}
+
+/* Ícones decorativos fixos */
+.decorativo {
+  position: absolute;
+  font-size: 32px;
+  opacity: 0.3;
+  color: #6ee7b7;
+  animation: flutuar 10s ease-in-out infinite;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.decorativo.folha {
+  top: 8%;
+  left: 6%;
+  animation-delay: 0s;
+}
+
+.decorativo.gota {
+  bottom: 12%;
+  right: 8%;
+  animation-delay: 2s;
+}
+
+.decorativo.reciclagem {
+  top: 18%;
+  right: 15%;
+  animation-delay: 4s;
+}
+
+@keyframes flutuar {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+/* Folhas subindo */
+.folha-subindo {
+  position: absolute;
+  bottom: -40px;
+  color: #6ee7b7;
+  opacity: 0.2;
+  animation: subirFolha 15s linear infinite;
+  z-index: 0;
+  pointer-events: none;
+}
+
+@keyframes subirFolha {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 0.2;
+  }
+  50% {
+    opacity: 0.4;
+  }
+  100% {
+    transform: translateY(-120vh) rotate(360deg);
+    opacity: 0;
+  }
 }

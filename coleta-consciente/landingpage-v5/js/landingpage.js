@@ -60,3 +60,59 @@ window.addEventListener('load', function() {
         }, 100);
     }
 });
+
+document.getElementById('parceiroForm').addEventListener('submit', async function (e) {
+  e.preventDefault();
+
+  const checkboxes = document.querySelectorAll('input[name="residuos"]');
+  const residuos = {
+    papel: false,
+    plastico: false,
+    vidro: false,
+    metal: false,
+    oleoCozinha: false,
+    pilhaBateria: false,
+    eletronico: false,
+    roupa: false,
+    outros: false
+  };
+
+  checkboxes.forEach(cb => {
+    if (cb.checked) residuos[cb.value] = true;
+  });
+
+    const parceiroData = {
+    nomeParceiro: document.getElementById('nomeParceiro').value,
+    tipoParceiro: document.getElementById('tipoParceiro').value,
+    responsavelParceiro: document.getElementById('responsavelParceiro').value,
+    telResponsavel: document.getElementById('telResponsavel').value,
+    emailResponsavel: document.getElementById('emailResponsavel').value,
+    rua: document.getElementById('rua').value,
+    numero: parseInt(document.getElementById('numero').value),
+    bairro: document.getElementById('bairro').value,
+    createdAt: new Date().toISOString(), // ✅ Adiciona a data de cadastro corretamente
+    ...residuos
+    };
+
+
+  try {
+    const response = await fetch('https://6860899b8e74864084437167.mockapi.io/jmt-futurodev/api/parceiros', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(parceiroData)
+    });
+
+    if (response.ok) {
+      alert('Dados enviados com sucesso!');
+      document.getElementById('parceiroForm').reset();
+    } else {
+      alert('Erro ao enviar os dados. Tente novamente.');
+    }
+  } catch (error) {
+    console.error('Erro ao enviar:', error);
+    alert('Erro de conexão. Verifique sua internet.');
+  }
+});
+
