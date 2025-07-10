@@ -116,3 +116,22 @@ document.getElementById('parceiroForm').addEventListener('submit', async functio
   }
 });
 
+// Animação ao scroll
+document.addEventListener('DOMContentLoaded', function() {
+  const impactCards = document.querySelectorAll('.impact-card');
+  
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, index) => {
+      if (entry.isIntersecting) {
+        // Delay diferente para cada card
+        setTimeout(() => {
+          entry.target.classList.add('visible');
+        }, 150 * index);
+      }
+    });
+  }, { threshold: 0.1 });
+  
+  impactCards.forEach(card => {
+    observer.observe(card);
+  });
+});
