@@ -1,0 +1,217 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: url('/coleta-consciente/img/texturaMaddeira.jpg') no-repeat center center fixed;
+  background-size: cover;
+  color: #1e392a;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Cabeçalho */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(34, 66, 50, 0.9);
+  padding: 18px 28px;
+  margin-bottom: 32px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  color: #ecfdf5;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.iconLogin{
+    font-weight: 550;
+    border: 3px solid #ecfdf5;
+    padding: 6px;
+    border-radius: 8px;
+}
+
+.iconLogin i{
+    margin-right: 4px;
+}
+
+.tudo{
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+
+main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+}
+
+/* Botão Sair */
+#logoutBtn {
+  background: #388e3c;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 15px;
+  transition: background 0.3s, transform 0.2s;
+}
+
+#logoutBtn:hover {
+  background: #4caf50;
+  transform: scale(1.03);
+}
+
+/* Tabela Estilizada */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  background: rgba(243, 248, 245, 0.92);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 0.5s ease;
+}
+
+/* Células */
+th, td {
+  padding: 18px 22px;
+  text-align: left;
+  font-size: 15.5px;
+  color: #2e3c2f;
+  border-bottom: 1px solid #d0e1d6;
+}
+
+th {
+  background-color: #7ebca3;
+  color: #143b2b;
+  font-size: 15px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+tr {
+  transition: background 0.25s ease;
+}
+
+tr:hover {
+  background-color: #e8f5ec;
+}
+
+th:first-child {
+  border-top-left-radius: 16px;
+}
+th:last-child {
+  border-top-right-radius: 16px;
+}
+
+/* Indicador de carregamento */
+.loading {
+  font-style: italic;
+  margin-top: 20px;
+  color: #91a69d;
+}
+
+/* Animação */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  table, thead, tbody, th, td, tr {
+    display: block;
+  }
+
+  th {
+    display: none;
+  }
+
+  td {
+    padding: 14px;
+    position: relative;
+    padding-left: 50%;
+  }
+
+  td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 16px;
+    top: 14px;
+    font-weight: bold;
+    color: #1e392a;
+    font-size: 14px;
+  }
+
+  tr {
+    margin-bottom: 12px;
+    background: rgba(255, 255, 255, 0.94);
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+  }
+
+  tr:hover {
+    background-color: #dcefe3;
+  }
+}
+
+/* Área de busca */
+.search-box {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 8px;
+  margin-bottom: 5px;
+  flex-wrap: wrap;
+  margin-left: 15px;
+}
+
+#searchInput {
+  padding: 8px 14px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 15px;
+  width: 220px;
+  transition: all 0.3s ease;
+  background-color: #f9fdf9;
+}
+
+#searchInput:focus {
+  outline: none;
+  border-color: #4caf50;
+  box-shadow: 0 0 0 2px rgba(76, 175, 80, 0.2);
+}
+
+.search-icon {
+  color: #4caf50;
+  font-size: 18px;
+}
+
+#searchBtn {
+  background-color: #f9fdf9;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s;
+}

@@ -1,17 +1,20 @@
 const emailInput = document.getElementById('email');
 const senhaInput = document.getElementById('senha');
 const btn = document.querySelector('button');
-const form=document.getElementById('loginForm');
 
-function toggleButton() {
+
+function toggleButton() 
+{
     btn.disabled = !(emailInput.value.trim() && senhaInput.value.trim());
 }
 
 emailInput.addEventListener('input', toggleButton);
 senhaInput.addEventListener('input', toggleButton);
 
-form.addEventListener('submit', e => {
-      e.preventDefault();
-      localStorage.setItem('emailUsuario', emailInput.value.trim());
-      window.location.href = 'listagem.html';
-    });
+
+document.getElementById('loginForm').addEventListener('submit', e => 
+{
+    e.preventDefault();
+    localStorage.setItem('emailUsuario', emailInput.value.trim());
+    window.location.href = '/coleta-consciente/listagem/listagem.html';
+});
