@@ -40,7 +40,7 @@ function renderizarTabela(lista) {
     const tr = document.createElement('tr');
     tr.style.cursor = 'pointer';
     tr.addEventListener('click', () => {
-      window.location.href = `/coleta-consciente/listagem/detalhe.html?id=${p.id}`;
+      window.location.href = `/coleta-consciente/detalhesParceiros/detalhe.html?id=${p.id}`;
     });
 
     tr.innerHTML = `
