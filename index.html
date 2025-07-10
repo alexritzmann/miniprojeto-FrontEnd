@@ -220,12 +220,27 @@
     <form id="parceiroForm" class="partner-form">
       <div class="form-grid">
 
+        <!-- Coluna 1 -->
         <div class="form-column">
+          <!-- Nome Parceiro -->
           <div class="form-group">
             <label for="nomeParceiro"><i class="fas fa-building"></i> Nome do Parceiro</label>
             <input type="text" id="nomeParceiro" required>
           </div>
-          
+          <!-- Rua -->
+          <div class="form-group">
+            <label for="rua"><i class="fas fa-road"></i> Rua</label>
+            <input type="text" id="rua" required>
+          </div>
+          <!-- Telefone -->
+          <div class="form-group">
+            <label for="telResponsavel"><i class="fas fa-phone"></i> Telefone</label>
+            <input type="tel" id="telResponsavel" required>
+          </div>
+        </div>
+        <!-- Coluna 2 -->
+        <div class="form-column">
+          <!-- Tipo Parceiro -->
           <div class="form-group">
             <label for="tipoParceiro"><i class="fas fa-tag"></i> Tipo do Parceiro</label>
             <select id="tipoParceiro" required>
@@ -235,39 +250,28 @@
               <option value="PEV">Ponto de Entrega Voluntária (PEV)</option>
             </select>
           </div>
-          
+          <!-- Número -->
           <div class="form-group">
-            <label for="responsavelParceiro"><i class="fas fa-user"></i> Responsável</label>
-            <input type="text" id="responsavelParceiro" required>
+            <label for="numero"><i class="fas fa-hashtag"></i> Número</label>
+            <input type="number" id="numero" required>
           </div>
-        </div>
-        
-        <div class="form-column">
-          <div class="form-group">
-            <label for="telResponsavel"><i class="fas fa-phone"></i> Telefone</label>
-            <input type="tel" id="telResponsavel" required>
-          </div>
-          
+          <!-- E-mail -->
           <div class="form-group">
             <label for="emailResponsavel"><i class="fas fa-envelope"></i> E-mail</label>
             <input type="email" id="emailResponsavel" required>
           </div>
-          
+        </div>
+        <!-- Coluna 3 -->
+        <div class="form-column">
+          <!-- Responsável -->
+          <div class="form-group">
+            <label for="responsavelParceiro"><i class="fas fa-user"></i> Responsável</label>
+            <input type="text" id="responsavelParceiro" required>
+          </div>
+          <!-- Bairro -->
           <div class="form-group">
             <label for="bairro"><i class="fas fa-map-pin"></i> Bairro</label>
             <input type="text" id="bairro" required>
-          </div>
-        </div>
-        
-        <div class="form-column">
-          <div class="form-group">
-            <label for="rua"><i class="fas fa-road"></i> Rua</label>
-            <input type="text" id="rua" required>
-          </div>
-          
-          <div class="form-group">
-            <label for="numero"><i class="fas fa-hashtag"></i> Número</label>
-            <input type="number" id="numero" required>
           </div>
         </div>
       </div>
