@@ -11,6 +11,7 @@
 </head>
 <body>
 
+  <!-- CABEÇALHO -->
 <header>
   <nav>
     <div class="logo"><img src="\coleta-consciente\img\logo-projeto6.png"></div>
@@ -20,11 +21,12 @@
       <li><a href="#objetivos">Objetivos</a></li>
       <li><a href="#impacto">Impacto</a></li>
       <li><a href="#acoes">Ações</a></li>
-      <li><a href="#cadastro">Seja Parceiro</a></li>
+      <li><a id="cadastro-parceiro" href="#cadastro">Seja Parceiro</a></li>
     </ul>
   </nav>
 </header>
 
+<!-- INÍCIO -->
 <section id="inicio" class="hero">
   <div class="hero-overlay">
     <video autoplay muted loop playsinline class="bg-video">
@@ -40,6 +42,7 @@
 
 <div class="divisao"></div>
 
+<!-- OBJETIVOS -->
 <section id="objetivos" class="objetivo">
   <div class="bg-objetivo">
     <div class="overlay-objetivo">
@@ -71,11 +74,11 @@
 
 </section>
 
-
+<!-- IMPACTO -->
 <section id="impacto" class="selene-impact">
   <div class="selene-container">
     <div class="impact-header">
-      <span class="section-label">IMPACTO</span>
+      <span id="impact-label" class="section-label">IMPACTO</span>
       <h2 class="section-title">Transformando resíduos em resultados</h2>
       <p class="section-description">Cada ação de reciclagem em Joinville contribui para um futuro mais sustentável e consciente</p>
     </div>
@@ -85,8 +88,8 @@
       <div class="impact-card">
         <div class="card-number">01</div>
         <div class="card-content">
-          <h3>O ciclo completo da reciclagem</h3>
-          <p>Desde a coleta seletiva até a transformação em novos produtos, acompanhe a jornada completa dos materiais recicláveis.</p>
+          <h3>O ciclo da reciclagem</h3>
+          <p>A reciclagem transforma resíduos em matéria-prima para novos produtos, reduzindo extração de recursos naturais, energia e emissões poluentes.</p>
         </div>
         <div class="card-image">
           <img src="/coleta-consciente/img/pessoas-coletando.jpg" alt="Ciclo da reciclagem">
@@ -99,7 +102,7 @@
         <div class="card-number">02</div>
         <div class="card-content">
           <h3>Seu papel na mudança</h3>
-          <p>Descubra como pequenas ações individuais criam um impacto coletivo significativo em nossa cidade.</p>
+          <p>A separação correta dos recicláveis viabiliza a cadeia produtiva, reduz lixos e pressiona por políticas públicas sustentáveis, transformando a cidade em uma comunidade mais consciente.</p>
         </div>
         <div class="card-image">
           <img src="/coleta-consciente/img/reciclando-casa.jpg" alt="Ação individual">
@@ -112,7 +115,7 @@
         <div class="card-number">03</div>
         <div class="card-content">
           <h3>Os riscos do descarte incorreto</h3>
-          <p>Entenda as consequências ambientais e sociais da má gestão de resíduos para nossa comunidade.</p>
+          <p>Lixões e aterros superlotados contaminam solos/água, geram gases tóxicos (como metano) e aumentam enchentes e custos públicos com saúde.</p>
         </div>
         <div class="card-image">
           <img src="/coleta-consciente/img/impacto-ruim.jpg" alt="Impactos negativos">
@@ -123,6 +126,7 @@
   </div>
 </section>
 
+<!-- AÇÕES -->
 <section id="acoes" class="secao-acoes">
   <div class="acoes-container">
     <div class="acoes-header">
@@ -131,62 +135,63 @@
       <p class="acoes-descricao">Pequenos gestos que fazem grande diferença para nossa cidade</p>
     </div>
 
-    <div class="acoes-cards-container">
-  <!-- Card 1 - Separação de Resíduos -->
-  <div class="acao-card card-organico">
-      <div class="acao-card-visual">
-        <div class="acao-icone-container">
-          <i class="fas fa-recycle"></i>
-        </div>
-        <div class="card-decoration leaf"></div>
-      </div>
-      <div class="acao-card-conteudo">
-        <h3 class="acao-titulo-card">Separação Inteligente</h3>
-        <ul class="acao-lista-itens">
-          <li class="acao-item-lista">Lave embalagens antes de descartar</li>
-          <li class="acao-item-lista">Separe vidros por cores</li>
-          <li class="acao-item-lista">Amasse latas e garrafas PET</li>
-        </ul>
-      </div>
-    </div>
+  <div class="acoes-cards-container">
 
-    <!-- Card 2 - Redução de Consumo -->
+    <!-- Card 1 -->
     <div class="acao-card card-organico">
-      <div class="acao-card-visual">
-        <div class="acao-icone-container">
-          <i class="fas fa-seedling"></i>
+        <div class="acao-card-visual">
+          <div class="acao-icone-container">
+            <i class="fas fa-recycle"></i>
+          </div>
+          <div class="card-decoration leaf"></div>
         </div>
-        <div class="card-decoration drop"></div>
-      </div>
-      <div class="acao-card-conteudo">
-        <h3 class="acao-titulo-card">Consumo Consciente</h3>
-        <ul class="acao-lista-itens">
-          <li class="acao-item-lista">Prefira embalagens retornáveis</li>
-          <li class="acao-item-lista">Use ecobags</li>
-          <li class="acao-item-lista">Opte por produtos a granel</li>
-        </ul>
-      </div>
-    </div>
-
-    <!-- Card 3 - Ecopontos -->
-    <div class="acao-card card-organico">
-      <div class="acao-card-visual">
-        <div class="acao-icone-container">
-          <i class="fas fa-map-marker-alt"></i>
+        <div class="acao-card-conteudo">
+          <h3 class="acao-titulo-card">Separação Inteligente</h3>
+          <ul class="acao-lista-itens">
+            <li class="acao-item-lista">Lave embalagens antes de descartar</li>
+            <li class="acao-item-lista">Separe vidros por cores</li>
+            <li class="acao-item-lista">Amasse latas e garrafas PET</li>
+          </ul>
         </div>
-        <div class="card-decoration cloud"></div>
       </div>
-      <div class="acao-card-conteudo">
-        <h3 class="acao-titulo-card">Ecopontos</h3>
-        <ul class="acao-lista-itens">
-          <li class="acao-item-lista">Procure os ecopontos pela cidade</li>
-          <li class="acao-item-lista">Descarte resíduos especiais</li>
-          <li class="acao-item-lista">Procure pelas empresas de Joinville cadastradas</li>
-        </ul>
-      </div>
-    </div>
 
-    <!-- Card 4 - Voluntariado -->
+      <!-- Card 2 -->
+      <div class="acao-card card-organico">
+        <div class="acao-card-visual">
+          <div class="acao-icone-container">
+            <i class="fas fa-seedling"></i>
+          </div>
+          <div class="card-decoration drop"></div>
+        </div>
+        <div class="acao-card-conteudo">
+          <h3 class="acao-titulo-card">Consumo Consciente</h3>
+          <ul class="acao-lista-itens">
+            <li class="acao-item-lista">Prefira embalagens retornáveis</li>
+            <li class="acao-item-lista">Use ecobags</li>
+            <li class="acao-item-lista">Opte por produtos a granel</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="acao-card card-organico">
+        <div class="acao-card-visual">
+          <div class="acao-icone-container">
+            <i class="fas fa-map-marker-alt"></i>
+          </div>
+          <div class="card-decoration cloud"></div>
+        </div>
+        <div class="acao-card-conteudo">
+          <h3 class="acao-titulo-card">Ecopontos</h3>
+          <ul class="acao-lista-itens">
+            <li class="acao-item-lista">Procure os ecopontos pela cidade</li>
+            <li class="acao-item-lista">Descarte resíduos especiais</li>
+            <li class="acao-item-lista">Procure pelas empresas de Joinville cadastradas</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
       <div class="acao-card card-organico">
         <div class="acao-card-visual">
           <div class="acao-icone-container">
@@ -206,7 +211,7 @@
   </div>
 </section>
 
-<!-- Cadastro de parceiro -->
+<!-- CADASTRO DE PARCEIROS -->
 <section id="cadastro" class="section-form">
   <div class="form-container">
     <h2><i class="fas fa-handshake"></i> Cadastre sua Organização</h2>
@@ -289,12 +294,13 @@
   </div>
 </section>
 
+<!-- FOOTER -->
 <footer>
   <div>
     <strong>&copy; Grupo de Trabalho:</strong> Alex Ritzmann, Jehfferson Wesllym Chepli, João Paulo Girard, Louise Morais.
   </div>
   <div>
-    <a href="https://www.un.org/sustainabledevelopment/pt/">Conheça os ODS da ONU</a>
+    <a href="https://brasil.un.org/pt-br/sdgs" target="_blank">Conheça os ODS da ONU</a>
   </div>
   <div class="logos">
     <img src="/coleta-consciente/img/logo-prefeitura2.png" alt="Prefeitura de Joinville" width="170px" height="62"/>
@@ -302,6 +308,8 @@
     <img src="/coleta-consciente/img/logo-senai4.png" alt="Senai" width="152px" height="35"/>
   </div>
 </footer>
+
+<!-- JAVASCRIPT -->
 <script src="/coleta-consciente/landingpage-v5/js/landingpage.js"></script>
 
 </body>

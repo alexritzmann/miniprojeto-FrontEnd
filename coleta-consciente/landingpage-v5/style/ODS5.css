@@ -79,6 +79,18 @@ nav a:hover {
   box-shadow: 0 0 8px #a3d09b;
 }
 
+#cadastro-parceiro{
+  background-color: rgba(23, 37, 32, 0.65);
+  color: #c4dac4;
+  box-shadow: 0 0 8px #a3d09b;
+}
+
+#cadastro-parceiro:hover{
+  background-color: #a3d09b;
+  color: #145214;
+  box-shadow: 0 0 8px #a3d09b;
+}
+
 .hero {
   position: relative;
   width: 100%;
@@ -714,11 +726,12 @@ select::-webkit-scrollbar-thumb {
 
 .section-label {
   display: block;
-  font-size: 25px;
+  font-size: 30px;
   letter-spacing: 2px;
   text-transform: uppercase;
   color: #b9b5b5;
   margin-bottom: 20px;
+  
 }
 
 .section-title {
@@ -927,6 +940,7 @@ select::-webkit-scrollbar-thumb {
   text-transform: uppercase;
   letter-spacing: 1px;
   margin-bottom: 20px;
+  font-size: 1.5rem;
 }
 
 .acoes-titulo {
