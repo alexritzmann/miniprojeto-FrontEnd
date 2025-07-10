@@ -7,13 +7,6 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
   <title>Plataforma Coleta Consciente - Joinville</title>
-
-  <!-- <style>
-    html {
-      scroll-behavior: smooth; /* Faz a rolagem para os IDs ser suave */
-    }
-  </style> -->
-
 </head>
 <body>
 
@@ -26,6 +19,7 @@
       <li><a href="#objetivos">Objetivos</a></li>
       <li><a href="#impacto">Impacto</a></li>
       <li><a href="#acoes">Ações</a></li>
+      <li><a href="#cadastro">Seja Parceiro</a></li>
     </ul>
   </nav>
 </header>
@@ -76,7 +70,6 @@
   </div>
 </div>
 
-
 <section id="impacto" class="sectionAlter">
   <div class="section-box">
     <h2>Impacto</h2>
@@ -96,6 +89,89 @@
       <li><strong>Participe de campanhas e eventos:</strong> mutirões de coleta, workshops e feiras sustentáveis.</li>
       <li><strong>Seja Parceiro:</strong> ajude na divulgação, patrocínio ou voluntariado em pelo menos duas das iniciativas acima.</li>
     </ul>
+  </div>
+</section>
+
+<!-- Cadastro de parceiro -->
+<section id="cadastro" class="section-form">
+  <div class="form-container">
+    <h2><i class="fas fa-handshake"></i> Cadastre sua Organização</h2>
+    <p class="form-subtitle">Junte-se a nós para uma Joinville mais sustentável</p>
+    
+    <form id="parceiroForm" class="partner-form">
+      <div class="form-grid">
+
+        <div class="form-column">
+          <div class="form-group">
+            <label for="nomeParceiro"><i class="fas fa-building"></i> Nome do Parceiro</label>
+            <input type="text" id="nomeParceiro" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="tipoParceiro"><i class="fas fa-tag"></i> Tipo do Parceiro</label>
+            <select id="tipoParceiro" required>
+              <option value="">Selecione...</option>
+              <option value="ECO">Ecoponto (ECO)</option>
+              <option value="COO">Cooperativa (COO)</option>
+              <option value="PEV">Ponto de Entrega Voluntária (PEV)</option>
+            </select>
+          </div>
+          
+          <div class="form-group">
+            <label for="responsavelParceiro"><i class="fas fa-user"></i> Responsável</label>
+            <input type="text" id="responsavelParceiro" required>
+          </div>
+        </div>
+        
+        <div class="form-column">
+          <div class="form-group">
+            <label for="telResponsavel"><i class="fas fa-phone"></i> Telefone</label>
+            <input type="tel" id="telResponsavel" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="emailResponsavel"><i class="fas fa-envelope"></i> E-mail</label>
+            <input type="email" id="emailResponsavel" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="bairro"><i class="fas fa-map-pin"></i> Bairro</label>
+            <input type="text" id="bairro" required>
+          </div>
+        </div>
+        
+        <div class="form-column">
+          <div class="form-group">
+            <label for="rua"><i class="fas fa-road"></i> Rua</label>
+            <input type="text" id="rua" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="numero"><i class="fas fa-hashtag"></i> Número</label>
+            <input type="number" id="numero" required>
+          </div>
+        </div>
+      </div>
+      
+      <div class="residuos-section">
+        <h3><i class="fas fa-recycle"></i> Resíduos Aceitos</h3>
+        <div class="residuos-grid">
+          <label><input type="checkbox" name="residuos" value="papel"> <i class="fas fa-file-alt"></i> Papel</label>
+          <label><input type="checkbox" name="residuos" value="plastico"> <i class="fas fa-bottle-water"></i> Plástico</label>
+          <label><input type="checkbox" name="residuos" value="vidro"> <i class="fas fa-glass-whiskey"></i> Vidro</label>
+          <label><input type="checkbox" name="residuos" value="metal"> <i class="fas fa-cog"></i> Metal</label>
+          <label><input type="checkbox" name="residuos" value="oleoCozinha"> <i class="fas fa-oil-can"></i> Óleo</label>
+          <label><input type="checkbox" name="residuos" value="pilhaBateria"> <i class="fas fa-battery-full"></i> Pilhas</label>
+          <label><input type="checkbox" name="residuos" value="eletronico"> <i class="fas fa-laptop"></i> Eletrônicos</label>
+          <label><input type="checkbox" name="residuos" value="roupa"> <i class="fas fa-tshirt"></i> Roupas</label>
+          <label><input type="checkbox" name="residuos" value="outros"> <i class="fas fa-ellipsis-h"></i> Outros</label>
+        </div>
+      </div>
+      
+      <button type="submit" class="submit-btn">
+        <i class="fas fa-paper-plane"></i> Enviar Cadastro
+      </button>
+    </form>
   </div>
 </section>
 
