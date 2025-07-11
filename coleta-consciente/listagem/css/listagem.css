@@ -70,20 +70,24 @@ header {
 }
 
 .search-container button {
+  
   padding: 12px 20px;
-  background: linear-gradient(135deg, var(--verde-destaque), var(--azul-musgo));
-  color: #0c1815;
+  background: linear-gradient(135deg, #a3d09b, #2e7d32);
+  color: #0a2016;
   font-weight: 600;
   border: none;
   border-radius: 10px;
   cursor: pointer;
   box-shadow: 0 4px 16px rgba(90, 230, 168, 0.3);
   transition: all 0.3s ease;
+  
 }
 
 .search-container button:hover {
-  transform: translateY(-2px);
+  transform: translateY(-3px);
   filter: brightness(1.1);
+  box-shadow: 0 5px 15px rgba(163, 208, 155, 0.4);
+  background: linear-gradient(135deg, #b5d9ae, #388e3c);
 }
 
 /* GRID DE CARDS */
