@@ -3,7 +3,7 @@
 ### Participantes do Grupo de Trabalho:
 - **Alex Ritzmann**
 - **Jehfferson Wesllym Chepli**
-- **João Paulo Girard**
+- **Leonardo R. De Souza**
 - **Louise Morais**
 
 ---
