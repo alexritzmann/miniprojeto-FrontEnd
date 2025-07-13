@@ -197,3 +197,39 @@
 .submit-btn:active {
   transform: translateY(1px);
 }
+
+ /* Estilização das options do select */
+select option {
+  background-color: #0a2016; /* Cor de fundo escura */
+  color: #d1e7c2; /* Cor do texto */
+  padding: 10px;
+  border-bottom: 1px solid rgba(163, 208, 155, 0.2); /* Linha divisória sutil */
+}
+
+/* Estilo quando hover */
+select option:hover {
+  background-color: #1a3a2a !important; /* Verde mais escuro */
+  color: #fff;
+}
+
+/* Estilo quando selecionado */
+select option:checked,
+select option:focus {
+  background-color: #0a2016; /* Cor de fundo escura */
+  color: #d1e7c2; /* Cor do texto */ /* Texto escuro para contraste */
+  font-weight: 600;
+}
+
+/* Estilo do dropdown (para navegadores WebKit como Chrome/Safari) */
+select::-webkit-scrollbar {
+  width: 8px;
+}
+
+select::-webkit-scrollbar-track {
+  background: rgba(10, 32, 22, 0.5);
+}
+
+select::-webkit-scrollbar-thumb {
+  background-color: #a3d09b;
+  border-radius: 4px;
+}
