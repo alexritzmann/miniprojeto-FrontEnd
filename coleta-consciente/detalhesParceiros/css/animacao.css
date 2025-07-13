@@ -1,0 +1,41 @@
+@keyframes folhaFlutua {
+  0% { transform: translateY(0) rotate(0deg); opacity: 0.8; }
+  50% { opacity: 1; }
+  100% { transform: translateY(-30px) rotate(5deg); opacity: 0.8; }
+}
+
+@keyframes flutuar {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+}
+
+@keyframes brilhoOrvalho {
+  0% { transform: scale(0.8) rotate(0deg); opacity: 0.5; }
+  50% { opacity: 0.8; }
+  100% { transform: scale(1.2) rotate(5deg); opacity: 0.5; }
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(110, 231, 183, 0.4); }
+  70% { box-shadow: 0 0 0 10px rgba(110, 231, 183, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(110, 231, 183, 0); }
+}
+
+@keyframes flutuar {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes subirFolha {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 0.2;
+  }
+  50% {
+    opacity: 0.4;
+  }
+  100% {
+    transform: translateY(-120vh) rotate(360deg);
+    opacity: 0;
+  }
+}

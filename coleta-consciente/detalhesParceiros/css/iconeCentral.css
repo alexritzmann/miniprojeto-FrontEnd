@@ -1,0 +1,36 @@
+/* Avatar icônico com tema ecológico */
+.icon-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 140px;
+  height: 140px;
+  margin: 0 auto 30px;
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 50%;
+  box-shadow:
+    0 8px 25px rgba(0, 0, 0, 0.15),
+    inset 0 0 10px rgba(110, 231, 183, 0.2);
+  backdrop-filter: blur(6px);
+  transition: all 0.5s ease;
+  border: 1px solid rgba(110, 231, 183, 0.3);
+}
+
+.icon-container:hover {
+  transform: scale(1.05) translateY(-5px);
+  box-shadow:
+    0 12px 30px rgba(0, 0, 0, 0.2),
+    inset 0 0 15px rgba(110, 231, 183, 0.3);
+  animation: pulse 2s infinite;
+}
+
+
+.icon-container i {
+  font-size: 60px;
+  color: var(--verde-folha);
+  transition: transform 0.4s ease;
+}
+
+.icon-container:hover i {
+  transform: scale(1.1);
+}
