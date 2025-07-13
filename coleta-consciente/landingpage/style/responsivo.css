@@ -1,0 +1,256 @@
+/* ===== CORREÇÃO GERAL - Impede rolagem lateral ===== */
+html, body {
+  overflow-x: hidden;
+}
+
+@media (max-width: 768px) {
+  /* Reduz o padding e altura do header */
+  header {
+    padding: 8px 16px;
+  }
+
+  nav {
+    flex-wrap: wrap;
+    height: auto;
+    gap: 8px;
+    justify-content: center;
+    align-items: center;
+  }
+
+  nav .logo img {
+    height: 40px;
+    margin-left: 0;
+    margin-right: 8px;
+  }
+
+  nav .title {
+    font-size: 18px;
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  /* Deixa logo e título lado a lado */
+  nav .logo,
+  nav .title {
+    display: inline-block;
+  }
+
+  /* Ajusta espaçamento dos links */
+  nav ul {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    margin-top: 0;
+  }
+
+  nav a {
+    font-size: 12px;
+    padding: 6px 10px;
+    border-radius: 6px;
+  }
+
+  #cadastro-parceiro {
+    font-size: 12px;
+    padding: 6px 10px;
+  }
+}
+
+
+
+
+/* ===== HERO SECTION ===== */
+@media (max-width: 768px) {
+  .hero-overlay h1 {
+    font-size: 2rem;
+  }
+
+  .hero-overlay h2 {
+    font-size: 1.2rem;
+  }
+
+  .hero {
+    height: 90vh;
+  }
+}
+
+/* ===== FOTO COLAGEM ===== */
+@media (max-width: 768px) {
+  .photo-collage {
+    height: 300px;
+  }
+
+  .photo-collage img {
+    width: 200px;
+    height: 150px;
+  }
+}
+
+/* ===== OBJETIVO SECTION ===== */
+@media (max-width: 768px) {
+  .overlay-objetivo h2 {
+    font-size: 2.2rem;
+  }
+
+  .overlay-objetivo p {
+    font-size: 1rem;
+    padding: 0 10px;
+  }
+
+  .ods-container {
+    gap: 30px;
+  }
+
+  .ods-item {
+    max-width: 180px;
+  }
+
+  .ods-icon-circle {
+    width: 100px;
+    height: 100px;
+  }
+
+  .ods-icon-circle span {
+    font-size: 40px;
+  }
+}
+
+/* ===== FORMULÁRIO ===== */
+@media (max-width: 900px) {
+  .form-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .form-container {
+    padding: 30px 20px;
+  }
+
+  .residuos-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .submit-btn {
+    padding: 12px 20px;
+    font-size: 14px;
+  }
+}
+
+/* ===== AÇÕES SECTION ===== */
+@media (max-width: 1024px) {
+  .acoes-cards-container {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .acao-card {
+    max-width: 80%;
+    margin-bottom: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .secao-acoes {
+    padding: 80px 0;
+  }
+
+  .acoes-titulo {
+    font-size: 2rem;
+  }
+
+  .acao-card-visual {
+    padding: 20px 20px 0;
+  }
+
+  .acao-card-conteudo {
+    padding: 0 20px 20px;
+  }
+
+  .acao-titulo-card {
+    font-size: 1.2rem;
+  }
+
+  .acao-item-lista {
+    font-size: 0.9rem;
+  }
+
+  .acao-icone-container {
+    width: 60px;
+    height: 60px;
+    top: -25px;
+  }
+
+  .acao-icone-container i {
+    font-size: 24px;
+  }
+}
+
+/* ===== IMPACTO SECTION ===== */
+@media (max-width: 992px) {
+  .impact-card,
+  .impact-card.reverse {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .card-image {
+    width: 100%;
+    height: 300px;
+  }
+
+  .card-number {
+    font-size: 80px;
+    top: -30px;
+    left: -20px;
+  }
+
+  .reverse .card-number {
+    right: -20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .selene-impact {
+    padding: 80px 0;
+  }
+
+  .section-title {
+    font-size: 32px;
+  }
+
+  .section-description {
+    font-size: 16px;
+  }
+
+  .card-content h3 {
+    font-size: 24px;
+  }
+
+  .card-content p {
+    font-size: 16px;
+  }
+}
+
+/* ===== FOOTER ===== */
+@media (max-width: 768px) {
+  footer {
+    font-size: 14px;
+    padding: 40px 20px;
+  }
+
+  footer .logos {
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+}
+
+/* ===== CORREÇÃO GERAL - Impede rolagem lateral ===== */
+html, body {
+  overflow-x: hidden;
+}

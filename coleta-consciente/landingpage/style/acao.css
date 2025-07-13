@@ -1,0 +1,214 @@
+/* ===== SEÇÃO AÇÕES - VISUAL ECOLÓGICO OTIMIZADO ===== */
+.secao-acoes {
+  padding: 120px 0;
+  background: linear-gradient(135deg, #f1f8e9 0%, #e8f5e9 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.secao-acoes::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: 
+    radial-gradient(circle at 20% 30%, rgba(163, 208, 155, 0.08), transparent 25%),
+    radial-gradient(circle at 80% 70%, rgba(100, 180, 120, 0.05), transparent 30%);
+  z-index: 0;
+}
+
+.acoes-container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.acoes-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.acoes-tag {
+  display: inline-block;
+  background: rgba(163, 208, 155, 0.15);
+  color: #2a7d4a;
+  padding: 8px 20px;
+  border-radius: 50px;
+  font: 600 14px "Poppins", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+}
+
+.acoes-titulo {
+  font-size: 2.5rem;
+  color: #1a3a2a;
+  line-height: 1.3;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.acoes-destaque {
+  color: #2a7d4a;
+  position: relative;
+  display: inline-block;
+}
+
+.acoes-destaque::after {
+  content: "";
+  position: absolute;
+  bottom: 8px;
+  left: 0;
+  width: 100%;
+  height: 6px;
+  background: rgba(163, 208, 155, 0.4);
+  border-radius: 3px;
+  z-index: -1;
+}
+
+.acoes-descricao {
+  font-size: 1.1rem;
+  color: #4a6b5a;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.acoes-cards-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: nowrap; /* impede quebra de linha */
+}
+.acao-card {
+  background: white;
+  flex: 1;
+  max-width: 28%;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  transition: all 0.4s ease;
+  animation: acao-card-entrada 0.6s ease forwards;
+  position: relative;
+  padding-top: 80px;
+  overflow: visible;
+}
+
+.acao-card > * {
+  position: relative;
+  z-index: 1;
+}
+
+.acao-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(163, 208, 155, 0.05), transparent 100%);
+  z-index: 0;
+}
+
+/* Removidos os ícones ::after decorativos */
+
+.acao-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+}
+
+.acao-card-visual {
+  display: flex;
+  justify-content: space-between;
+  padding: 90px 25px 0;
+  position: relative;
+}
+
+.acao-icone-container {
+  position: absolute;
+  top: -32px;
+  left: 25px;
+  width: 70px;
+  height: 70px;
+  background: #f0f7f2;
+  border-radius: 16px;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.35s ease, background 0.35s ease, box-shadow 0.35s ease;
+  z-index: 2;
+}
+
+.acao-icone-container i {
+  font-size: 32px;
+  color: #2a7d4a;
+  transition: all 0.3s ease;
+}
+
+.acao-card:hover .acao-icone-container {
+  transform: translateY(-10px) scale(1.08);
+  background: linear-gradient(135deg, #a3d09b, #64b478);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.22);
+}
+
+.acao-card:hover .acao-icone-container i {
+  color: #fff;
+}
+
+.acao-card-conteudo {
+  padding: 0 25px 25px;
+}
+
+.acao-titulo-card {
+  font-size: 1.4rem;
+  color: #1a3a2a;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+.acao-lista-itens {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 0;
+}
+
+.acao-item-lista {
+  position: relative;
+  padding-left: 25px;
+  margin-bottom: 12px;
+  font-size: 0.95rem;
+  color: #4a6b5a;
+  line-height: 1.7;
+}
+
+.acao-item-lista::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: #a3d09b;
+  font-weight: bold;
+}
+
+@keyframes acao-card-entrada {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.card-organico {
+  border-radius: 18px;
+  overflow: hidden;
+  position: relative;
+}
+
+.card-organico::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(163, 208, 155, 0.1), rgba(100, 180, 120, 0.05));
+  z-index: 0;
+}
