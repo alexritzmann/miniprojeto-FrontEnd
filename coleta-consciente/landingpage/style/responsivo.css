@@ -142,54 +142,92 @@ html, body {
   }
 }
 
-/* ===== AÇÕES SECTION ===== */
-@media (max-width: 1024px) {
+@media (max-width: 768px) {
   .acoes-cards-container {
-    flex-wrap: wrap;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
   }
 
   .acao-card {
-    max-width: 80%;
-    margin-bottom: 40px;
+    width: 90%;
+    max-width: 340px;
+    height: auto;
+    min-height: 360px; /* ← Altura mais compacta */
+    padding-top: 36px;
+    padding-bottom: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
   }
-}
 
-@media (max-width: 768px) {
-  .secao-acoes {
-    padding: 80px 0;
+  .acao-icone-container {
+    top: -22px;
+    width: 56px;
+    height: 56px;
+  }
+
+  .acao-icone-container i {
+    font-size: 26px;
   }
 
   .acoes-titulo {
     font-size: 2rem;
   }
 
-  .acao-card-visual {
-    padding: 20px 20px 0;
+  .acoes-tag {
+    font-size: 1.1rem;
+    padding: 6px 14px;
   }
 
-  .acao-card-conteudo {
-    padding: 0 20px 20px;
+  .acoes-descricao {
+    font-size: 1rem;
   }
 
   .acao-titulo-card {
     font-size: 1.2rem;
+    margin-bottom: 16px;
   }
 
   .acao-item-lista {
-    font-size: 0.9rem;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 8px;
+  }
+
+  .acao-card-conteudo {
+    padding: 0 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .acao-card {
+    width: 92%;
+    max-width: 320px;
+    min-height: 350px;
+    padding-top: 30px;
   }
 
   .acao-icone-container {
-    width: 60px;
-    height: 60px;
-    top: -25px;
+    top: -20px;
+    width: 52px;
+    height: 52px;
   }
 
   .acao-icone-container i {
     font-size: 24px;
   }
+
+  .acao-titulo-card {
+    font-size: 1.1rem;
+  }
+
+  .acao-item-lista {
+    font-size: 0.9rem;
+  }
 }
+
+
 
 /* ===== IMPACTO SECTION ===== */
 @media (max-width: 992px) {
