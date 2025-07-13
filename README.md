@@ -5,6 +5,7 @@
 - **Jehfferson Wesllym Chepli**
 - **João Paulo Girard**
 - **Louise Morais**
+- **Leonardo Ribeiro**
 
 ---
 
