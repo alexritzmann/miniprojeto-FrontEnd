@@ -287,8 +287,3 @@ html, body {
     gap: 20px;
   }
 }
-
-/* ===== CORREÇÃO GERAL - Impede rolagem lateral ===== */
-html, body {
-  overflow-x: hidden;
-}
