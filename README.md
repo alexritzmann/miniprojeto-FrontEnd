@@ -46,7 +46,15 @@ O projeto está alinhado com os **Objetivos de Desenvolvimento Sustentável (ODS
 │
 ├── landingpage-v5/
 │   ├── style/
-│   │   └── ODS5.css
+│   │   └── acao.css
+│   │   └── base.css
+│   │   └── footer.css
+│   │   └── formulario.css
+│   │   └── header.css
+│   │   └── hero.css
+│   │   └── impacto.css
+│   │   └── objetivo.css
+│   │   └── responsivo.css
 │   └── js/
 │       └── landingpage.js
 │
@@ -60,7 +68,11 @@ O projeto está alinhado com os **Objetivos de Desenvolvimento Sustentável (ODS
 ├── detalhesParceiros/
 │   ├── detalhe.html
 │   ├── css/
+│   │   └── animacao.css
+│   │   └── botaoVoltar.css
 │   │   └── detalhe.css
+│   │   └── header.css
+│   │   └── iconeCentral.css
 │   └── js/
 │       └── detalhe.js
 │
